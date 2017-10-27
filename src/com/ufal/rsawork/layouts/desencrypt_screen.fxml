@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ufal.rsawork.controllers.DesencryptScreeController">
+    <children>
+        <Label layoutX="201.0" layoutY="25.0" text="Digite os numeros 'p', 'q' e 'e':" />
+        <Label layoutX="50.0" layoutY="84.0" text="p:" />
+        <Label layoutX="209.0" layoutY="84.0" text="q:" />
+        <Label layoutX="372.0" layoutY="85.0" text="e:" />
+        <JFXTextField fx:id="pValue" layoutX="72.0" layoutY="80.0" prefHeight="24.0" prefWidth="104.0" />
+        <JFXTextField fx:id="qValue" layoutX="242.0" layoutY="81.0" prefHeight="24.0" prefWidth="104.0" />
+        <JFXTextField fx:id="eValue" layoutX="408.0" layoutY="82.0" prefHeight="24.0" prefWidth="104.0" />
+        <JFXTextField fx:id="desencryptMessage" layoutX="136.0" layoutY="200.0" prefHeight="24.0" prefWidth="328.0" />
+        <JFXButton fx:id="desencriptButton" layoutX="242.0" layoutY="261.0" mnemonicParsing="false" onAction="#desencryptAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Desencriptar" />
+        <JFXButton fx:id="goHomeButton" layoutX="21.0" layoutY="358.0" mnemonicParsing="false" onAction="#backAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Voltar" />
+        <Label layoutX="140.0" layoutY="158.0" text="Digite a mensagem de texto a ser desencriptada" />
+    </children>
+</AnchorPane>

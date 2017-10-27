@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ufal.rsawork.controllers.GenerateKeyController">
+    <children>
+        <Label layoutX="153.0" layoutY="14.0" text="Por favor, digite um par de numeros primos 'p' e 'q':" />
+        <Label layoutX="20.0" layoutY="76.0" text="p:" />
+        <Label layoutX="208.0" layoutY="76.0" text="q:" />
+        <Label fx:id="eLabel" layoutX="407.0" layoutY="76.0" text="e:" />
+        <JFXTextField fx:id="getTextP" layoutX="45.0" layoutY="72.0" prefHeight="24.0" prefWidth="128.0" />
+        <JFXTextField fx:id="getTextQ" layoutX="254.0" layoutY="72.0" prefHeight="24.0" prefWidth="128.0" />
+        <JFXTextField fx:id="eValue" layoutX="449.0" layoutY="72.0" prefHeight="24.0" prefWidth="128.0" />
+        <JFXButton fx:id="confirmButton" layoutX="270.0" layoutY="133.0" mnemonicParsing="false" onAction="#confirmAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Confirmar" />
+        <JFXButton fx:id="generateButton" layoutX="263.0" layoutY="200.0" mnemonicParsing="false" onAction="#generateKeyAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Gerar chave" />
+        <JFXButton fx:id="goHomeButton" layoutX="20.0" layoutY="350.0" mnemonicParsing="false" onAction="#backAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Voltar" />
+        <Label fx:id="msgSugestion" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="172.0" prefHeight="16.0" prefWidth="579.0" />
+    </children>
+</AnchorPane>

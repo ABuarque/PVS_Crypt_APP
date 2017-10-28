@@ -20,7 +20,7 @@ class MainController {
 
     fun initialize() {
         repository.setOnAction {
-            ProcessBuilder("x-www-browser", repository.text).start()
+            ProcessBuilder("x-www-browser", "https://github.com/ABuarque/PVS_Crypt_APP").start()
         }
     }
 

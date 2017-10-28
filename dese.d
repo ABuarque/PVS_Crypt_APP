@@ -1,1 +1,0 @@
-morte ao miojo

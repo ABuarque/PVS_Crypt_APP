@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
-
-<?import javafx.scene.control.Label?>
-<?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
 <AnchorPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ufal.rsawork.controllers.GenerateKeyController">
     <children>
-        <Label layoutX="153.0" layoutY="14.0" text="Por favor, digite um par de numeros primos 'p' e 'q':" />
-        <Label layoutX="20.0" layoutY="76.0" text="p:" />
-        <Label layoutX="208.0" layoutY="76.0" text="q:" />
-        <Label fx:id="eLabel" layoutX="407.0" layoutY="76.0" text="e:" />
-        <JFXTextField fx:id="getTextP" layoutX="45.0" layoutY="72.0" prefHeight="24.0" prefWidth="128.0" />
-        <JFXTextField fx:id="getTextQ" layoutX="254.0" layoutY="72.0" prefHeight="24.0" prefWidth="128.0" />
-        <JFXTextField fx:id="eValue" layoutX="449.0" layoutY="72.0" prefHeight="24.0" prefWidth="128.0" />
-        <JFXButton fx:id="confirmButton" layoutX="270.0" layoutY="133.0" mnemonicParsing="false" onAction="#confirmAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Confirmar" />
-        <JFXButton fx:id="generateButton" layoutX="263.0" layoutY="200.0" mnemonicParsing="false" onAction="#generateKeyAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Gerar chave" />
-        <JFXButton fx:id="goHomeButton" layoutX="20.0" layoutY="350.0" mnemonicParsing="false" onAction="#backAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Voltar" />
-        <Label fx:id="msgSugestion" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="172.0" prefHeight="16.0" prefWidth="579.0" />
+        <Label layoutX="189.0" layoutY="49.0" text="Digite um par de números primos 'p' e 'q':" />
+        <Label layoutX="130.0" layoutY="91.0" text="p:" />
+        <Label layoutX="305.0" layoutY="91.0" text="q:" />
+        <Label fx:id="eLabel" layoutX="223.0" layoutY="250.0" text="e:" />
+        <Label fx:id="msgSugestion" alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="183.0" prefHeight="16.0" prefWidth="579.0" textFill="#c6306e" />
+        <Label layoutX="183.0" layoutY="217.0" text="Digite um expoente 'e' coprimo a (p-1)(q-1):" />
+        <JFXTextField fx:id="getTextP" layoutX="150.0" layoutY="87.0" prefHeight="24.0" prefWidth="128.0" />
+        <JFXTextField fx:id="getTextQ" layoutX="325.0" layoutY="87.0" prefHeight="24.0" prefWidth="128.0" />
+        <JFXButton fx:id="confirmButton" layoutX="265.0" layoutY="135.0" mnemonicParsing="false" onAction="#confirmAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Confirmar" />
+        <JFXTextField fx:id="eValue" layoutX="242.0" layoutY="246.0" prefHeight="24.0" prefWidth="128.0" />
+        <JFXButton fx:id="generateButton" layoutX="265.0" layoutY="296.0" mnemonicParsing="false" onAction="#generateKeyAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Gerar Key" />
+        <JFXButton fx:id="goHomeButton" layoutX="14.0" layoutY="359.0" mnemonicParsing="false" onAction="#backAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Voltar" />
     </children>
 </AnchorPane>

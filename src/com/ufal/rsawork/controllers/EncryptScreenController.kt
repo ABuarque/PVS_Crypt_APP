@@ -55,13 +55,15 @@ class EncryptScreenController {
             val encryptedMessage = StringBuilder()
             val messageChars = givenMessage.toCharArray()
             val messageSize = messageChars.size
-            val iterator = 0
+            println("SIZE : $messageSize")
+            var iterator = 0
             for (c in messageChars) {
                 val ASCII = c.toInt()
                 val encrypted = fastModularExponentiation(ASCII.toLong(), eValue.toLong(), nValue.toLong())
                 encryptedMessage.append(encrypted.toString())
-                if (iterator + 1 != messageSize)
+                if ((iterator + 1) != messageSize)
                     encryptedMessage.append(" ")
+                iterator++
             }
             AlertDialog.display("Mensagem Encriptada", encryptedMessage.toString() + "\nA mensagem encriptada foi salva com sucesso!")
             saveData(encryptedMessage.toString())

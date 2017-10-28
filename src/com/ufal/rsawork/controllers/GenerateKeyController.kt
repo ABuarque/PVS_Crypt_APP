@@ -65,6 +65,8 @@ class GenerateKeyController {
                     AlertDialog.display("Aviso", baseMessage + "'p' não é um número primo!")
                 else if (!qIsPrime)
                     AlertDialog.display("Aviso", baseMessage + "'q' não é um número primo!")
+            } else if (pValue == qValue) {
+                AlertDialog.display("Aviso", "Os valores não podem ser iguais.")
             } else {
                 savedN = pValue * qValue
                 println("n: " + savedN)

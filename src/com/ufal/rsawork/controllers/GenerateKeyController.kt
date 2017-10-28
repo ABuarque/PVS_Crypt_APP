@@ -85,7 +85,7 @@ class GenerateKeyController {
 
     @FXML
     fun generateKeyAction(event: Event) {
-        if(!okConfirm) {
+        if(okConfirm) {
             val e = eValue!!.text
             if (e == "")
                 AlertDialog.display("Aviso", "Por favor, preencha o campo referente ao valor do expoente 'e'!")
@@ -111,6 +111,8 @@ class GenerateKeyController {
                     AlertDialog.display("Aviso", "Por favor, insira um valor válido para o expoente 'e'!")
                 }
             }
+        } else {
+            AlertDialog.display("Aviso", "Preencha todos os campos.")
         }
     }
 

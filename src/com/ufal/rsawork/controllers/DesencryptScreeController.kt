@@ -37,7 +37,7 @@ class DesencryptScreeController {
         val e = eValue!!.text
         val encripted = desencryptMessage!!.text
         if (p == "" || q == "" || e == "" || encripted == "")
-            AlertDialog.display("Aviso", "Preencha os campos.")
+            AlertDialog.display("Aviso", "Por favor, preencha todos os campos!")
         else {
             val pValue = Integer.parseInt(p)
             val qValue = Integer.parseInt(q)
@@ -55,8 +55,19 @@ class DesencryptScreeController {
             for (c in message)
                 x.append(Integer.parseInt(c).toChar())
 
-            AlertDialog.display("AVISO", x.toString() + "\nA mensagem desencriptada foi salva com sucesso!")
+            AlertDialog.display("Mensagem Desencriptada", x.toString() + "\nA mensagem desencriptada foi salva com sucesso!")
             saveDesemcripted(x.toString())
+            try {
+                (event.source as Node).scene.window.hide()
+                val mainSource = FXMLLoader.load<Parent>(javaClass
+                        .getResource("../layouts/main_screen.fxml"))
+                val mainStage = Stage()
+                mainStage.title = Main.APP_NAME
+                mainStage.scene = Scene(mainSource)
+                mainStage.show()
+            } catch (ex: Exception) {
+                ex.printStackTrace()
+            }
         }
     }
 

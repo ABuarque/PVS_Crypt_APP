@@ -7,12 +7,22 @@ import javafx.fxml.FXMLLoader
 import javafx.scene.Node
 import javafx.scene.Parent
 import javafx.scene.Scene
+import javafx.scene.control.Hyperlink
 import javafx.stage.Stage
 
 class MainController {
 
     private var utilParent: Parent? = null
     private var utilStage: Stage? = null
+
+    @FXML
+    private lateinit var repository: Hyperlink
+
+    fun initialize() {
+        repository.setOnAction {
+            ProcessBuilder("x-www-browser", repository.text).start()
+        }
+    }
 
     @FXML
     fun generateKeyAction(event: Event) {

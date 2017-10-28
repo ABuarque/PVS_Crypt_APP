@@ -48,7 +48,7 @@ class EncryptScreenController {
         val givenMessage = encryptMessage!!.text
 
         if (givenN == "" || givenE == "" || givenMessage == "") {
-            AlertDialog.display("Aviso", "Preencha todos os campos!")
+            AlertDialog.display("Aviso", "Por favor, preencha todos os campos!")
         } else {
             val eValue = Integer.parseInt(givenE)
             val nValue = Integer.parseInt(givenN)
@@ -63,8 +63,19 @@ class EncryptScreenController {
                 if (iterator + 1 != messageSize)
                     encryptedMessage.append(" ")
             }
-            AlertDialog.display("Aviso", encryptedMessage.toString() + "\nA mensagem encriptada foi salva com sucesso!")
+            AlertDialog.display("Mensagem Encriptada", encryptedMessage.toString() + "\nA mensagem encriptada foi salva com sucesso!")
             saveData(encryptedMessage.toString())
+            try {
+                (event.source as Node).scene.window.hide()
+                val mainSource = FXMLLoader.load<Parent>(javaClass
+                        .getResource("../layouts/main_screen.fxml"))
+                val mainStage = Stage()
+                mainStage.title = Main.APP_NAME
+                mainStage.scene = Scene(mainSource)
+                mainStage.show()
+            } catch (ex: Exception) {
+                ex.printStackTrace()
+            }
         }
     }
 }

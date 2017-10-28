@@ -14,7 +14,8 @@ public class AlertDialog {
         Stage current = new Stage();
         current.initModality(Modality.APPLICATION_MODAL);
         current.setTitle(title);
-        current.setMinWidth(250);
+        current.setMinWidth(400);
+        current.setMinHeight(200);
 
         Label label = new Label();
         label.setText(message);

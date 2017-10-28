@@ -1,4 +1,4 @@
-# PVS_Crypt (Powered by EngApp)
+# PVS Crypt (Powered by EngApp)
 
 ![Icon creators](https://user-images.githubusercontent.com/17463488/32131110-3f934a76-bb7c-11e7-83aa-88f7f30b2dd4.jpeg)
 
@@ -9,6 +9,9 @@ It's an app that shows how RSA encryption works.
 + ![Fellipe Malta](https://github.com/fmmalta) - frontend
 + ![Flavio Farias](https://github.com/ffpsj) - frontend
 + Hugo Davi - tester
+
+## On changing implementation
+Feel free to clone this repo and change the code, just remember to configure jfoenix library in your IDE.
 
 ## Important links
 + [On Kotlin running with JavaFX framework](https://annimon.com/article/2059)

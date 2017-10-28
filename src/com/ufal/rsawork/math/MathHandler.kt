@@ -27,7 +27,7 @@ fun isPrime(number: Long): Boolean {
  * OBS: -505 param is language requirement
  *
  * @param e key
- * @param totient
+ * @param totient number
  * @return inverse
  */
 fun extendedEuclides(e: Long, totient: Long): Long {
@@ -42,7 +42,7 @@ fun extendedEuclides(e: Long, totient: Long): Long {
  *
  * @param p key
  * @param q key
- * @return their totient
+ * @return totient
  */
 fun totient(p: Long, q: Long): Long {
     return (p - 1) * (q - 1)
@@ -51,8 +51,8 @@ fun totient(p: Long, q: Long): Long {
 /**
  * It gets two numbers and returns its gcd.
  *
- * @param long a
- * @param long b
+ * @param a number
+ * @param b number
  * @return gcd between them
  * */
 fun gcd(a: Long, b: Long): Long {
@@ -65,8 +65,8 @@ fun gcd(a: Long, b: Long): Long {
  * It gets two number and check if their gcd
  * is equals to one.
  *
- * @param a number
- * @param a totient
+ * @param e expoent
+ * @param totient number
  * @return true if gcd == 1, false if not
  */
 fun isCoPrime(e: Long, totiente: Long): Boolean {
@@ -77,11 +77,11 @@ fun isCoPrime(e: Long, totiente: Long): Boolean {
  * It gets a totient and returns list
  * of coprimes.
  *
- * @param a totient
- * @param a coprime list
+ * @param totient number
+ * @param coprime list
+ * @return list of coprimes
  */
 fun getCoprimes(totient: Long): MutableList<Long> {
-    println("Given totient: $totient")
     val numbers: MutableList<Long> = mutableListOf()
     for(i in 2..(totient))
         if(isCoPrime(i, totient))
@@ -93,9 +93,9 @@ fun getCoprimes(totient: Long): MutableList<Long> {
  * It gets three arguments: ASCII, e, and number N.
  *
  * @param ASCII
- * @param e key
+ * @param e key or d inverse
  * @param N Key
- * @return encrypted char
+ * @return encrypted char and desencrypted char
  */
 fun fastModularExponentiation(ASCII: Long, e: Long, N: Long): Long {
     var ASCII = ASCII

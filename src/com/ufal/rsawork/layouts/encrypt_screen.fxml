@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
-
-<?import javafx.scene.control.Label?>
-<?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ufal.rsawork.controllers.EncryptScreenController">
     <children>
-        <Label layoutX="161.0" layoutY="149.0" text="Digite a mensagem de texto à ser encriptada:" />
-        <JFXTextField fx:id="encryptMessage" layoutX="161.0" layoutY="182.0" prefHeight="24.0" prefWidth="301.0" />
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="28.0" text="Digite os números 'N' e 'e' referentes  chave pública recebida previamente:" textAlignment="CENTER" />
-        <Label layoutX="109.0" layoutY="89.0" text="N:" />
-        <Label layoutX="328.0" layoutY="89.0" text="e:" />
-        <JFXTextField fx:id="nValue" layoutX="133.0" layoutY="85.0" />
-        <JFXTextField fx:id="eValue" layoutX="352.0" layoutY="84.0" />
-        <JFXButton fx:id="goHomeButton" layoutX="22.0" layoutY="352.0" mnemonicParsing="false" onAction="#backAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Voltar" />
-        <JFXButton fx:id="encryptButton" layoutX="288.0" layoutY="239.0" mnemonicParsing="false" onAction="#encryptAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Encriptar" />
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="49.0" text="Digite os números 'n' e 'e' referentes à chave pública recebida previamente:" textAlignment="CENTER" />
+        <Label layoutX="130.0" layoutY="91.0" text="n:" />
+        <Label layoutX="305.0" layoutY="91.0" text="e:" />
+        <Label layoutX="179.0" layoutY="171.0" text="Digite a mensagem de texto à ser encriptada:" />
+        <JFXTextField fx:id="nValue" layoutX="150.0" layoutY="87.0"  prefHeight="24.0" prefWidth="128.0" />
+        <JFXTextField fx:id="eValue" layoutX="325.0" layoutY="87.0"  prefHeight="24.0" prefWidth="128.0" />
+        <JFXTextField fx:id="encryptMessage" layoutX="150.0" layoutY="200.0" prefHeight="24.0" prefWidth="300.0" />
+        <JFXButton fx:id="encryptButton" layoutX="267.0" layoutY="261.0" mnemonicParsing="false" onAction="#encryptAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Encriptar" />
+        <JFXButton fx:id="goHomeButton" layoutX="14.0" layoutY="359.0" mnemonicParsing="false" onAction="#backAction" style="-fx-border-color: #e0e0e0; -fx-border-radius: 8;" text="Voltar" />
     </children>
 </AnchorPane>

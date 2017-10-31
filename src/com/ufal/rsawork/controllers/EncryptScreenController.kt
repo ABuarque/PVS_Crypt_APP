@@ -42,29 +42,41 @@ class EncryptScreenController {
 
     @FXML
     fun encryptAction(event: Event) {
-        println("CLICKED")
         val givenN = nValue!!.text
         val givenE = eValue!!.text
         val givenMessage = encryptMessage!!.text
 
         if (givenN == "" || givenE == "" || givenMessage == "") {
-            AlertDialog.display("Aviso", "Preencha todos os campos!")
+            AlertDialog.display("Aviso", "Por favor, preencha todos os campos!")
         } else {
-            val eValue = Integer.parseInt(givenE)
-            val nValue = Integer.parseInt(givenN)
+            val eValue = (givenE).toLong()
+            val nValue = (givenN).toLong()
             val encryptedMessage = StringBuilder()
             val messageChars = givenMessage.toCharArray()
             val messageSize = messageChars.size
-            val iterator = 0
+            var iterator = 0
             for (c in messageChars) {
                 val ASCII = c.toInt()
                 val encrypted = fastModularExponentiation(ASCII.toLong(), eValue.toLong(), nValue.toLong())
+                println(encrypted)
                 encryptedMessage.append(encrypted.toString())
-                if (iterator + 1 != messageSize)
+                if ((iterator + 1) != messageSize)
                     encryptedMessage.append(" ")
+                iterator++
             }
-            AlertDialog.display("Aviso", encryptedMessage.toString() + "\nA mensagem encriptada foi salva com sucesso!")
+            AlertDialog.display("Mensagem Encriptada", encryptedMessage.toString() + "\nA mensagem encriptada foi salva com sucesso!")
             saveData(encryptedMessage.toString())
+            try {
+                (event.source as Node).scene.window.hide()
+                val mainSource = FXMLLoader.load<Parent>(javaClass
+                        .getResource("../layouts/main_screen.fxml"))
+                val mainStage = Stage()
+                mainStage.title = Main.APP_NAME
+                mainStage.scene = Scene(mainSource)
+                mainStage.show()
+            } catch (ex: Exception) {
+                ex.printStackTrace()
+            }
         }
     }
 }

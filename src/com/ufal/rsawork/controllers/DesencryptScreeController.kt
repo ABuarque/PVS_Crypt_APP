@@ -5,7 +5,7 @@ import com.ufal.rsawork.Main
 import com.ufal.rsawork.math.extendedEuclides
 import com.ufal.rsawork.math.fastModularExponentiation
 import com.ufal.rsawork.math.totient
-import com.ufal.rsawork.persistence.saveDesemcripted
+import com.ufal.rsawork.persistence.saveDesencripted
 import com.ufal.rsawork.utils.AlertDialog
 import javafx.event.Event
 import javafx.fxml.FXML
@@ -37,11 +37,11 @@ class DesencryptScreeController {
         val e = eValue!!.text
         val encripted = desencryptMessage!!.text
         if (p == "" || q == "" || e == "" || encripted == "")
-            AlertDialog.display("Aviso", "Preencha os campos.")
+            AlertDialog.display("Aviso", "Por favor, preencha todos os campos!")
         else {
-            val pValue = Integer.parseInt(p)
-            val qValue = Integer.parseInt(q)
-            val eValue = Integer.parseInt(e)
+            val pValue = (p).toLong()
+            val qValue = (q).toLong()
+            val eValue = (e).toLong()
             val ASCIIs = encripted.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
             val message = ArrayList<String>()
             for (encripedPart in ASCIIs) {
@@ -55,14 +55,24 @@ class DesencryptScreeController {
             for (c in message)
                 x.append(Integer.parseInt(c).toChar())
 
-            AlertDialog.display("AVISO", x.toString() + "\nA mensagem desencriptada foi salva com sucesso!")
-            saveDesemcripted(x.toString())
+            AlertDialog.display("Mensagem Desencriptada", x.toString() + "\nA mensagem desencriptada foi salva com sucesso!")
+            saveDesencripted(x.toString())
+            try {
+                (event.source as Node).scene.window.hide()
+                val mainSource = FXMLLoader.load<Parent>(javaClass
+                        .getResource("../layouts/main_screen.fxml"))
+                val mainStage = Stage()
+                mainStage.title = Main.APP_NAME
+                mainStage.scene = Scene(mainSource)
+                mainStage.show()
+            } catch (ex: Exception) {
+                ex.printStackTrace()
+            }
         }
     }
 
     @FXML
     fun backAction(event: Event) {
-        println("BACK")
         try {
             (event.source as Node).scene.window.hide()
             val mainSource = FXMLLoader.load<Parent>(javaClass

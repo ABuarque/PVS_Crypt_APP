@@ -3,9 +3,10 @@ package com.ufal.rsawork.math
 class MathHandler
 
 /**
- * It gets a numbers and check if it's prime or not.
+ * It gets a number and check
+ * if it's prime or not.
  *
- * @param a number
+ * @param number value
  * @return true if is prime, false if not
  */
 fun isPrime(number: Long): Boolean {
@@ -27,7 +28,7 @@ fun isPrime(number: Long): Boolean {
  * OBS: -505 param is language requirement
  *
  * @param e key
- * @param totient
+ * @param totient value
  * @return inverse
  */
 fun extendedEuclides(e: Long, totient: Long): Long {
@@ -42,7 +43,7 @@ fun extendedEuclides(e: Long, totient: Long): Long {
  *
  * @param p key
  * @param q key
- * @return their totient
+ * @return totient
  */
 fun totient(p: Long, q: Long): Long {
     return (p - 1) * (q - 1)
@@ -51,8 +52,8 @@ fun totient(p: Long, q: Long): Long {
 /**
  * It gets two numbers and returns its gcd.
  *
- * @param long a
- * @param long b
+ * @param a number
+ * @param b number
  * @return gcd between them
  * */
 fun gcd(a: Long, b: Long): Long {
@@ -65,8 +66,8 @@ fun gcd(a: Long, b: Long): Long {
  * It gets two number and check if their gcd
  * is equals to one.
  *
- * @param a number
- * @param a totient
+ * @param e key
+ * @param totient value
  * @return true if gcd == 1, false if not
  */
 fun isCoPrime(e: Long, totiente: Long): Boolean {
@@ -77,36 +78,40 @@ fun isCoPrime(e: Long, totiente: Long): Boolean {
  * It gets a totient and returns list
  * of coprimes.
  *
- * @param a totient
- * @param a coprime list
+ * @param totient value
+ * @return list of coprimes
  */
 fun getCoprimes(totient: Long): MutableList<Long> {
-    println("Given totient: $totient")
     val numbers: MutableList<Long> = mutableListOf()
+    var counter: Int = 0
     for(i in 2..(totient))
-        if(isCoPrime(i, totient))
+        if(isCoPrime(i, totient)) {
             numbers.add(i)
+            counter++
+            if(counter == 10)
+                break
+        }
     return numbers.subList(0, 10)
 }
 
 /**
- * It gets three arguments: ASCII, e, and number N.
+ * It gets three arguments: ASCII, e, and number n.
  *
  * @param ASCII
- * @param e key
- * @param N Key
- * @return encrypted char
+ * @param e key or d inverse
+ * @param n Key
+ * @return encrypted char or desencrypted char
  */
 fun fastModularExponentiation(ASCII: Long, e: Long, N: Long): Long {
     var ASCII = ASCII
     var e = e
-    var r: Long = 1
+    var r: Long = 1L
     ASCII = ASCII % N
-    while (e > 0) {
+    while (e > 0L) {
         if (e % 2L != 0L)
-            r = r * ASCII % N
-        e /= 2
-        ASCII = ASCII * ASCII % N
+            r = (r * ASCII) % N
+        e /= 2L
+        ASCII = (ASCII * ASCII) % N
     }
     return r
 }
